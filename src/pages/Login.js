@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   SafeAreaView,
   Text,
@@ -8,8 +9,17 @@ import {
   KeyboardAvoidingView,
   Platform,
 } from 'react-native';
-
+import { useNavigation } from '@react-navigation/native';
 const Login = ({}) => {
+  const [user,setUser]= useState({
+    first_name:"",
+    last_name:"",
+    age:null,
+    dob:null,
+    phone:null,
+    city:null
+  })
+  const navigation = useNavigation();
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
@@ -28,37 +38,39 @@ const Login = ({}) => {
         <View style={styles.input_fields_view}>
           <TextInput
             style={styles.input_fields}
+            autoCorrect={false}
             placeholder="First name"
-            onChangeText={text => {}}
+            onChangeText={(text) => {setUser({...user,first_name:text});console.log('----user-----',user)}}
           />
           <TextInput
             style={styles.input_fields}
             placeholder="Last name"
-            onChangeText={text => {}}
+            onChangeText={(text) => {setUser({...user,last_name:text});console.log('----user-----',user)}}
           />
           <TextInput
             style={styles.input_fields}
             placeholder="Age"
-            onChangeText={text => {}}
+            keyboardType="numeric"
+            onChangeText={(text) => {setUser({...user,age:text});console.log('----user-----',user)}}
           />
           <TextInput
             style={styles.input_fields}
             placeholder="dob"
-            onChangeText={text => {}}
+            onChangeText={(text) => {setUser({...user,dob:text});console.log('----user-----',user)}}
           />
           <TextInput
             style={styles.input_fields}
             placeholder="phone"
-            onChangeText={text => {}}
+            onChangeText={(text) => {setUser({...user,phone:text});console.log('----user-----',user)}}
           />
           <TextInput
             style={styles.input_fields}
-            placeholder="city"
-            onChangeText={text => {}}
+            placeholder="city"s
+            onChangeText={(text) => {setUser({...user,city:text});console.log('----user-----',user)}}
           />
         </View>
         <View style={{alignItems: 'center'}}>
-          <TouchableOpacity style={styles.button_styles}>
+          <TouchableOpacity style={styles.button_styles} onPress = {()=>{ navigation.navigate('allStudent',{user})}} >
             <Text style={{fontWeight: '700', fontSize: 20, alignSelf: 'auto'}}>
               Submit
             </Text>

@@ -1,11 +1,14 @@
-const { SafeAreaView  ,Text} = require("react-native");
+import { useRoute } from "@react-navigation/native";
+const { SafeAreaView  , Text , View} = require("react-native");
 
 export default  AllStudent = () =>{
+    const {user}= useRoute().params
+    console.log(user)
     return (
         <SafeAreaView>
-            <Text>
-                Hello abhishek from all student info
-            </Text>
+           <View>
+            <Text>All students info</Text>
+           </View>
         </SafeAreaView>
     );
 }
