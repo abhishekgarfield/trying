@@ -6,20 +6,26 @@
  */
 
 import React from 'react';
+import {NavigationContainer} from "@react-navigation/native";
+import { createStackNavigator } from '@react-navigation/stack';
+const Stack = createStackNavigator();
 import {
   SafeAreaView,
   ScrollView,
   Text,
   View,
-} from 'react-native';
+} from 'react-native'; 
+import Login from './src/pages/Login';
+import allStudent from './src/pages/allStudent';
 
 const App = () => {
   return (
-  <SafeAreaView>
-    <View>
-      <Text>Hello from abhishek side buddy</Text>
-    </View>
-  </SafeAreaView>
+  <NavigationContainer>
+    <Stack.Navigator>
+      <Stack.Screen name='Login' component = {Login} />
+      <Stack.Screen name='allStudent' component={allStudent} />
+    </Stack.Navigator>
+  </NavigationContainer>
 );
 }
 
