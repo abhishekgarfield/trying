@@ -1,17 +1,14 @@
-import { SafeAreaView ,Text ,View} from "react-native";
+import {View, Text} from 'react-native';
 
-export default Header = () =>{
-    const hr = false
-    return (
-        <SafeAreaView>
-            <View>
-                <Text>Icon</Text>
-            </View>
-            <View>
-                <Text>
-                    { hr &&  "sdsf"}
-                </Text>
-            </View>
-        </SafeAreaView>
-    );
-}
+export default Header = () => {
+  return (
+    <>
+      <View>
+        <Text>{'<-'}</Text>
+      </View>
+      <View>
+        <Text>All students info</Text>
+      </View>
+    </>
+  );
+};

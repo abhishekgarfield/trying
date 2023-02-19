@@ -7,8 +7,9 @@ import {
   StyleSheet,
   TouchableOpacity,
   KeyboardAvoidingView,
-  Platform,
+  Platform
 } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
 const Login = ({}) => {
   const [user,setUser]= useState({
@@ -23,7 +24,7 @@ const Login = ({}) => {
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-      keyboardVerticalOffset={Platform.OS === 'ios' ? 150 : 0}
+      keyboardVerticalOffset={Platform.OS === 'ios' ? 30 : 0}
       style={{flex: 1}}>
       <SafeAreaView
         style={{
@@ -70,7 +71,7 @@ const Login = ({}) => {
           />
         </View>
         <View style={{alignItems: 'center'}}>
-          <TouchableOpacity style={styles.button_styles} onPress = {()=>{ navigation.navigate('allStudent',{user})}} >
+          <TouchableOpacity style={styles.button_styles} onPress = {()=>{ navigation.navigate('allStudent',{user});AsyncStorage.setItem(`${user.first_name}`,JSON.stringify(user),(err)=>{console.log(err,'---- async error------')})}} >
             <Text style={{fontWeight: '700', fontSize: 20, alignSelf: 'auto'}}>
               Submit
             </Text>
