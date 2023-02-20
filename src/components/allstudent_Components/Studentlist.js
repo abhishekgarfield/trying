@@ -2,7 +2,6 @@ import { View ,Text, StyleSheet, TouchableOpacity} from "react-native";
 import CustomModal from "./CustomModal";
 
 export default Sudentlist = ({student,selectedStudent,setSelectedStudent}) =>{
-    console.log("-------",student)
     return (
         <TouchableOpacity style={styles.tab_style} onPress={()=>{
             setSelectedStudent({show:true,student:student})
@@ -18,14 +17,14 @@ export default Sudentlist = ({student,selectedStudent,setSelectedStudent}) =>{
 const styles = StyleSheet.create({
     tab_style : {
         padding:15,
-        backgroundColor:"lightblue",
+        backgroundColor:"white",
         marginTop:4,
         marginHorizontal:5,
         borderRadius:4,
         flexDirection:"row",justifyContent:"space-between",
         shadowOffset:{height:6,width:3},
         shadowColor:"#c5c5c5",
-        shadowOpacity:30
+        shadowOpacity:23
         
     }
 })

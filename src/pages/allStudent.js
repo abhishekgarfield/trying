@@ -30,9 +30,7 @@ export default AllStudent = () => {
   },[]);
   return (
     <SafeAreaView style={styles.top_container}>
-            <View style={styles.nested__header_div_1}>
                 <Header/>
-            </View>
             <ScrollView style={{flex:1}}>
                {students?.map((student,index)=>{
                 return <Studentlist student={student} key={index} selectedStudent={selectedStudent} setSelectedStudent={setSelectedStudent}/>
