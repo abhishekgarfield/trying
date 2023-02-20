@@ -40,7 +40,7 @@ export default AllStudent = () => {
             <CustomModal selectedStudent={selectedStudent} setSelectedStudent={setSelectedStudent} />
         }
     </SafeAreaView>
-  );
+  );  
 };
 
 const styles = StyleSheet.create({
