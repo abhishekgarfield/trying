@@ -9,24 +9,26 @@ const {SafeAreaView, Text, View, StyleSheet} = require('react-native');
 export default AllStudent = () => {
    // const studentList = [{first_name:"abhiek",last_name:"sharma",age:"34",dob:"23/43/4",city:"sujanpur"},{first_name:"garfield",last_name:"sharma",age:"34",dob:"23/43/4",city:"sujanpur"}]
   const navigation = useNavigation();
-  const {user} = useRoute().params;
+  const {user,func,test} = useRoute().params;
+  console.log('----------------sds',test)
+  console.log("assadasd----------",test)
   const [students,setStudents]=useState([])
   const [selectedStudent ,setSelectedStudent] = useState({show:false,student:null})
   useEffect(() => {
     navigation.setOptions({
       headerShown: false,
     });
-    
     AsyncStorage.getAllKeys((error,result)=>{
-        console.log("---------errors=======",error,"-----keys-----",result)
         keys = result;
         AsyncStorage.multiGet(keys,(error,result)=>{
-            console.log("results------",result)
            filtered = result.map((value) => JSON.parse(value.filter((value,index)=> index==1 )))
-           console.log("------sdfsdfs-==========",filtered)
              setStudents(filtered)
         })
     })
+    setTimeout(()=>{
+      console.log("000000000")
+        func("jean")
+    },5000)
   },[]);
   return (
     <SafeAreaView style={styles.top_container}>

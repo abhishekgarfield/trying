@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   SafeAreaView,
   Text,
@@ -19,6 +19,12 @@ const Login = ({}) => {
     dob:null,
     phone:null,
     city:null
+  })
+  const [test,setTest]=useState("abhishek");
+  console.log("--------------sdfsd",test)
+  const hello = (name) => { setTest(name) }
+  useEffect(()=>{
+    console.log("000098w97987 ----- ",test)
   })
   const navigation = useNavigation();
   return (
@@ -71,7 +77,7 @@ const Login = ({}) => {
           />
         </View>
         <View style={{alignItems: 'center'}}>
-          <TouchableOpacity style={styles.button_styles} onPress = {()=>{ navigation.navigate('allStudent',{user});AsyncStorage.setItem(`${user.first_name}`,JSON.stringify(user),(err)=>{console.log(err,'---- async error------')})}} >
+          <TouchableOpacity style={styles.button_styles} onPress = {()=>{ navigation.navigate('allStudent',{user,func:(name)=>hello(name)});AsyncStorage.setItem(`${user.first_name}`,JSON.stringify(user))}} >
             <Text style={{fontWeight: '700', fontSize: 20, alignSelf: 'auto'}}>
               Submit
             </Text>
