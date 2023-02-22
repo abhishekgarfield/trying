@@ -19,7 +19,7 @@ const Login = ({}) => {
     dob:null,
     phone:null,
     city:null
-  })
+  }) 
   const [test,setTest]=useState("abhishek");
   console.log("--------------sdfsd",test)
   const hello = (name) => { setTest(name) }
