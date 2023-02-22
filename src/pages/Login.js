@@ -51,7 +51,7 @@ const Login = ({}) => {
           />
           <TextInput
             style={styles.input_fields}
-            placeholder="Last name"
+            placeholder="Last name" 
             onChangeText={(text) => {setUser({...user,last_name:text});console.log('----user-----',user)}}
           />
           <TextInput
