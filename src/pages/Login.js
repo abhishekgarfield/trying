@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
-const Login = ({}) => {
+const Login = ({}) => {  
   const [user,setUser]= useState({
     first_name:"",
     last_name:"",
@@ -19,7 +19,7 @@ const Login = ({}) => {
     dob:null,
     phone:null,
     city:null
-  })   s
+  })  
   const [test,setTest]=useState("abhishek");
   console.log("--------------sdfsd",test)
   const hello = (name) => { setTest(name) }
