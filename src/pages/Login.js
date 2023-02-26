@@ -12,7 +12,7 @@ import {
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
 const Login = ({}) => {  
-  const [user,setUser]= useState({
+  const [user,setUser]= useState({   
     first_name:"",
     last_name:"",
     age:null,
