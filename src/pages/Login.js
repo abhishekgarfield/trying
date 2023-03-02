@@ -22,7 +22,7 @@ const Login = ({}) => {
   })  
   const [test,setTest]=useState("abhishek");
   console.log("--------------sdfsd",test)
-  const hello = (name) => { setTest(name) }
+  const hello = (name) => { setTest(name) } 
   useEffect(()=>{
     console.log("000098w97987 ----- ",test)
   })
